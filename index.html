@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+ <link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Quiz App</title>
+</head>
+<body>
+    <div class="start" id="start">
+        <button>Start Quiz</button>
+    </div>
+
+    <div class="rules" id="rules">
+
+
+    </div>
+
+    <div class="quiz_container" id="quiz_container">
+        <header>
+            <div>Quiz Application</div>
+            <div class="time_wrapper">
+                <span class="time_left_text" id="time_left_text">Time left</span>
+                <span class="time" id="time">15</span>
+            </div>
+        </header>
+        <section>
+            <div class="quiz_question" id="quiz_question">
+                <h3>What does HTML stand for?</h3>  
+            </div>
+            <div class="question_option_wrapper" id="question_option_wrapper">
+                <div class="question_options" id="question_options">
+                    <span class="option" id="option">Hyper Text Preprocessor</span>
+                    <span class="tickIcon" id="tickIcon"><i class="fas fa-check-circle"></i></span>
+                    <span class="crossIcon" id="crossIcon"><i class="far fa-times-circle"></i></span>
+                </div>
+
+                <div class="question_options" id="question_options">
+                    <span class="option" id="option">Hyper Text Multiple Language</span>
+                    <span class="tickIcon" id="tickIcon"><i class="fas fa-check-circle"></i></span>
+                    <span class="crossIcon" id="crossIcon"><i class="far fa-times-circle"></i></span>
+                </div>
+
+                <div class="question_options" id="question_options">
+                    <span class="option" id="option">Hyper Tool Multi Language</span>
+                    <span class="tickIcon" id="tickIcon"><i class="fas fa-check-circle"></i></span>
+                    <span class="crossIcon" id="crossIcon"><i class="far fa-times-circle"></i></span>
+                </div>
+
+            </div>
+        </section>
+
+        <footer>
+            <span class="question_count" id="question_count"></span>
+            <button class="next_btn" id="next_btn">Next Question</button>
+        </footer>
+    </div>  
+    
+
+    <div class="result_container" id="result_container">
+        <i class="fas fa-crown"></i>
+       <h2>Congratulation, you have complete the quiz</h2> 
+       <p>You got 3 out of 5 questions</p>
+    </div>
+
+
+    <!-- <script src="https://use.fontawesome.com/132f477c1a.js"></script> -->
+   <script src="js/main.js"></script>
+   <script src="js/questions.js"></script>
+</body>
+</body>
+</html>
