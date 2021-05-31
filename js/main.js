@@ -17,6 +17,8 @@ const exit_btn = document.getElementById('exit_btn');
 const continue_btn = document.getElementById('continue_btn');
 let Time = 20;
 let question_index = 0;
+let correct_answer_count = 0;
+
 start_btn.onclick=()=>{
     start_btn.remove();
    rule.classList.add('addopacity');
@@ -66,10 +68,24 @@ function  showQuestion(index){
 
 
 function  checkAnswer(){
-    // console.log(this);
+    //correct answer
     let correctAns = questions[question_index].answer;
+
     if(this.textContent == correctAns){
         this.nextElementSibling.innerHTML = `<span class="tickIcon" id="tickIcon"><i class="fas fa-check-circle" style="font-size: 20px;"></i></span>`;
+        let  question_option = document.querySelectorAll('.option');
+        question_option.forEach(item =>{
+         //    item.onclick = checkAnswer;
+         item.style.cssText ="opacity: 0.6;color: currentColor;cursor: not-allowed; pointer-events:none";    
+        })
+
+    }else if(this.textContent != correctAns){
+        this.nextElementSibling.innerHTML = `<span class="crossIcon" id="crossIcon"><i class="far fa-times-circle" style="font-size: 20px;"></i></span>`;
+        let  question_option = document.querySelectorAll('.option');
+        question_option.forEach(item =>{
+         //    item.onclick = checkAnswer;
+         item.style.cssText ="opacity: 0.6;color: currentColor;cursor: not-allowed; pointer-events:none";    
+        })
     }
 
 
