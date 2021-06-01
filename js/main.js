@@ -56,7 +56,9 @@ function  showQuestion(question_index){
                 
             </div>
         </div>`
-        question_option_wrapper.insertAdjacentHTML("afterbegin",  optionElement);
+        // question_option_wrapper.insertAdjacentHTML("afterbegin",  optionElement);
+        question_option_wrapper.innerHTML +=`${optionElement}`
+      
     })
 //   next_btn.setAttribute('style', 'opacity:1;');
    let  question_option = document.querySelectorAll('.option');
@@ -93,7 +95,6 @@ function  checkAnswer(){
             if (item.textContent == correctAns) {
                 item.nextElementSibling.innerHTML = `<span class="tickIcon" id="tickIcon"><i class="fas fa-check-circle" style="font-size: 20px;"></i></span>`;
             }
-          
                
            })
     }
@@ -116,24 +117,19 @@ function startTime(sec){
         result_container.setAttribute('style', 'opacity:1;');
        }
 
-   }, 1000)
-  
-   
-  
+   }, 1000) 
 }
 
 //next question button click
 next_btn.onclick =()=>{
     question_index++;
     question_show++;
+    let child = document.querySelectorAll('.question_options');
+    child.forEach(item=> item.remove());
     showQuestion(question_index);
     // startTime(15);
 }
 
 
 
-
-
-
-//<span class="tickIcon" id="tickIcon"><i class="fas fa-check-circle" style="font-size: 20px;"></i></span>
-//<span class="crossIcon" id="crossIcon"><i class="far fa-times-circle" style="font-size: 20px;"></i></span>
+   
