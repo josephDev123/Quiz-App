@@ -15,9 +15,10 @@ const replay_btn = document.getElementById('replay_btn');
 const end_quit_btn = document.getElementById('quit_btn');
 const exit_btn = document.getElementById('exit_btn');
 const continue_btn = document.getElementById('continue_btn');
-let Time = 20;
+let Time = 60;
 let question_index = 0;
 let correct_answer_count = 0;
+let question_show =1
 
 start_btn.onclick=()=>{
     start_btn.remove();
@@ -28,7 +29,7 @@ start_btn.onclick=()=>{
    }
 
    continue_btn.onclick=()=>{
-        showQuestion(0);
+        showQuestion(question_index);
         startTime(15);
         // numberQuestion(1);
 
@@ -38,17 +39,17 @@ start_btn.onclick=()=>{
 }
 
 
-function  showQuestion(index){
+function  showQuestion(question_index){
     // remove the rules container
     rule.remove();
     //make the quiz box visible
     quiz_container.classList.add('addopacity');
     //question 
-    let questionHeading =   `<h3 class="question_heading" id="question_heading">  <span>${questions[index].numb}.</span>${questions[index].question}</h3>`;
+    let questionHeading =   `<h3 class="question_heading" id="question_heading">  <span>${questions[question_index].numb}.</span>${questions[question_index].question}</h3>`;
     quiz_question.innerHTML = questionHeading;
     //question option
-    let options = questions[index].options.length;
-    questions[index].options.forEach(item =>{
+    let options = questions[question_index].options.length;
+    questions[question_index].options.forEach(item =>{
             let optionElement = ` <div class="question_options" id="question_options">
             <div class="option" id="option">${item}</div>
             <div class="tickCross_wrapper">
@@ -60,10 +61,11 @@ function  showQuestion(index){
 //   next_btn.setAttribute('style', 'opacity:1;');
    let  question_option = document.querySelectorAll('.option');
    question_option.forEach(item =>{
-    //    item.onclick = checkAnswer;
     item.onclick = checkAnswer;
        
    })
+
+    question_count.textContent =`${question_show} out of ${questions.length}`;
 }
 
 
@@ -78,7 +80,7 @@ function  checkAnswer(){
          //    item.onclick = checkAnswer;
          item.style.cssText ="opacity: 0.6;color: currentColor;cursor: not-allowed; pointer-events:none";    
         })
-
+        correct_answer_count++;
     }else if(this.textContent != correctAns){
         this.nextElementSibling.innerHTML = `<span class="crossIcon" id="crossIcon"><i class="far fa-times-circle" style="font-size: 20px;"></i></span>`;
         let  question_option = document.querySelectorAll('.option');
@@ -86,13 +88,22 @@ function  checkAnswer(){
          //    item.onclick = checkAnswer;
          item.style.cssText ="opacity: 0.6;color: currentColor;cursor: not-allowed; pointer-events:none";    
         })
+        // when users choose the wrong answer, show them the right answer
+        question_option.forEach(item =>{
+            if (item.textContent == correctAns) {
+                item.nextElementSibling.innerHTML = `<span class="tickIcon" id="tickIcon"><i class="fas fa-check-circle" style="font-size: 20px;"></i></span>`;
+            }
+          
+               
+           })
     }
 
+    next_btn.style.opacity =1;
 
 }
 
 
-
+//timer countdown
 function startTime(sec){
    sec = Time;
  
@@ -111,8 +122,13 @@ function startTime(sec){
   
 }
 
-
-
+//next question button click
+next_btn.onclick =()=>{
+    question_index++;
+    question_show++;
+    showQuestion(question_index);
+    // startTime(15);
+}
 
 
 
