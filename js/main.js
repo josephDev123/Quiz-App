@@ -15,7 +15,7 @@ const replay_btn = document.getElementById('replay_btn');
 const end_quit_btn = document.getElementById('quit_btn');
 const exit_btn = document.getElementById('exit_btn');
 const continue_btn = document.getElementById('continue_btn');
-let Time = 60;
+let Time = 30;
 let question_index = 0;
 let correct_answer_count = 0;
 let question_show =1
@@ -141,6 +141,14 @@ next_btn.onclick =()=>{
 }
 
 
+//replay button
+replay_btn.onclick =()=>{
 
+    console.log('hello');
+}
 
    
+//exit quiz at the end of the quiz or when the the timer get ot zero(0)end_quit_btn
+end_quit_btn.onclick =()=>{
+    location.reload();
+}
