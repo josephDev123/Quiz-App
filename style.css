@@ -183,6 +183,16 @@ footer{
     padding-top: 10px;
 }
 
+.romovedisbledcursorFromNext_btn{
+    cursor: pointer; 
+    pointer-events:auto;
+    padding: 10px;
+    color: white;
+    background-color: green;
+    border-radius: 5px;
+    border: none;
+}
+
 .next_btn{
     padding: 10px;
     color: white;
@@ -190,6 +200,8 @@ footer{
     border-radius: 5px;
     border: none;
     opacity: 0;
+    cursor: not-allowed; 
+    pointer-events:none
 }
 
 .next_btn:hover{
@@ -203,7 +215,7 @@ footer{
     align-items: center;
     background-color: white;
     border-radius: 5px;
-    padding: 10px;
+    padding: 10px 50px 10px 50px;
     /* width: 350px; */
     position: absolute;
     top: 50%;

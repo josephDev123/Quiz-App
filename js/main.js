@@ -88,7 +88,8 @@ function  checkAnswer(){
         let  question_option = document.querySelectorAll('.option');
         question_option.forEach(item =>{
          //    item.onclick = checkAnswer;
-         item.style.cssText ="opacity: 0.6;color: currentColor;cursor: not-allowed; pointer-events:none";    
+         item.style.cssText ="opacity: 0.6;color: currentColor;cursor: not-allowed; pointer-events:none";  
+           
         })
         // when users choose the wrong answer, show them the right answer
         question_option.forEach(item =>{
@@ -100,6 +101,7 @@ function  checkAnswer(){
     }
 
     next_btn.style.opacity =1;
+    next_btn.setAttribute('class', 'romovedisbledcursorFromNext_btn');
 
 }
 
@@ -122,12 +124,18 @@ function startTime(sec){
 
 //next question button click
 next_btn.onclick =()=>{
-    question_index++;
-    question_show++;
-    let child = document.querySelectorAll('.question_options');
-    child.forEach(item=> item.remove());
-    showQuestion(question_index);
-    // startTime(15);
+    if(question_index < questions.length){
+        question_index++;
+        question_show++;
+        let child = document.querySelectorAll('.question_options');
+        child.forEach(item=> item.remove());
+        showQuestion(question_index);
+       
+    }else{
+       
+    quiz_container.remove(); 
+    result_container.setAttribute('style', 'opacity:1;');
+  }
 }
 
 
