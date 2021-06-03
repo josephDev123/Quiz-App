@@ -117,6 +117,7 @@ function startTime(sec){
     if(sec == 0){
         quiz_container.remove(); 
         result_container.setAttribute('style', 'opacity:1;');
+        document.getElementById('que_answer_text').textContent = `You got ${correct_answer_count} question(s) out of ${questions.length} questions`;
        }
 
    }, 1000) 
@@ -135,8 +136,10 @@ next_btn.onclick =()=>{
        
     quiz_container.remove(); 
     result_container.setAttribute('style', 'opacity:1;');
+    document.getElementById('que_answer_text').textContent = `You got ${correct_answer_count} question(s) out of ${questions.length} questions`;
   }
 }
+
 
 
 
