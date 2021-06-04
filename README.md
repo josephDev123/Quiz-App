@@ -9,9 +9,12 @@ It is an App that test your knowledge about a certain topic. It just like other 
 
 ## Language Stack
 HTML
+
 CSS
+
 Javascript
 
 ## Developer
 [Joseph Uzuegbu](https://www.linkedin.com/in/joseph-uzuegbu/)
+
 [Joseph Uzuegbu](https://github.com/josephDev123)
