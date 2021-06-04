@@ -44,7 +44,7 @@ function  showQuestion(question_index){
     rule.remove();
     //make the quiz box visible
     quiz_container.classList.add('addopacity');
-    //question 
+    //question heading
     let questionHeading =   `<h3 class="question_heading" id="question_heading">  <span>${questions[question_index].numb}.</span>${questions[question_index].question}</h3>`;
     quiz_question.innerHTML = questionHeading;
     //question option
@@ -55,7 +55,7 @@ function  showQuestion(question_index){
             <div class="tickCross_wrapper">
                 
             </div>
-        </div>`
+        </div>`;
         // question_option_wrapper.insertAdjacentHTML("afterbegin",  optionElement);
         question_option_wrapper.innerHTML +=`${optionElement}`
       
@@ -142,16 +142,17 @@ next_btn.onclick =()=>{
 
 
 //replay button
-replay_btn.onclick =()=>{
-    Time = 30;
-    question_index = 0;
-    correct_answer_count = 0;
-    question_show =1
-    showQuestion(question_index);
-        startTime(Time);
-        quiz_container.remove(); 
-        result_container.setAttribute('style', 'opacity:1;');
-}
+// replay_btn.onclick =()=>{
+//         result_container.remove(); 
+//         Time = 30;
+//         question_index = 0;
+//         correct_answer_count = 0;
+//         question_show =1
+//         // result_container.setAttribute('style', 'opacity:1;');
+//         showQuestion(question_index);
+//         startTime(Time);
+//         console.log('hello');
+// }
 
    
 //exit quiz at the end of the quiz or when the the timer get ot zero(0)end_quit_btn

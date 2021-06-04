@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
  <link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+
+ <link rel="stylesheet" href="http://anijs.github.io/lib/anicollection/anicollection.css">
     <link rel="stylesheet" href="style.css">
 
     <title>Quiz App</title>
@@ -22,13 +24,15 @@
         <div class="rules_heading" id="rules_heading">
              <strong>Quiz Rules</strong> 
         </div>
-        <div class="rule_body" id="rule_body">
+    
+        <div class="rule_body" id="rule_body" data-anijs="if: click, do: flip animated, to: $closest target, after: $removeAnim" >
             <p>   1. You will have only <span style="color:red"> 30 seconds</span> for entire question.</p>
             <p> 2. Once you select your answer, it can't be undone.</p>
             <p> 3. You can't select any option once time goes off.</p>
             <p>4. You can't exit from the Quiz while you're playing.</p>
             <p>  5. You'll get points on the basis of your correct answers.</p>
-        </div> 
+        </div>
+   
         <div class="rules_footer" id='rules_footer'>
             <button class="exit_btn" id="exit_btn">Exit Quiz</button>
             <button class="continue_btn" id="continue_btn">Continue Quiz</button>
@@ -73,7 +77,7 @@
        <h1>Congratulation!!! </h1> 
        <p id="que_answer_text"></p>
        <div class="footer_replay_quit">
-            <button class="replay_btn" id="replay_btn">Replay</button>
+            <!-- <button class="replay_btn" id="replay_btn">Replay</button> -->
             <button class="quit_btn" id="quit_btn">Quit</button>
        </div>
        
@@ -81,8 +85,11 @@
 
 
     <!-- <script src="https://use.fontawesome.com/132f477c1a.js"></script> -->
+    <script src="anijs-min.js"></script>
    <script src="js/main.js"></script>
    <script src="js/questions.js"></script>
+   <script src="https://anijs.github.io/lib/anijs/anijs-min.js"></script> 
+ 
 </body>
 </body>
 </html>
