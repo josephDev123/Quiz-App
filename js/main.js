@@ -143,8 +143,14 @@ next_btn.onclick =()=>{
 
 //replay button
 replay_btn.onclick =()=>{
-
-    console.log('hello');
+    Time = 30;
+    question_index = 0;
+    correct_answer_count = 0;
+    question_show =1
+    showQuestion(question_index);
+        startTime(Time);
+        quiz_container.remove(); 
+        result_container.setAttribute('style', 'opacity:1;');
 }
 
    
